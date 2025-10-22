@@ -5,3 +5,13 @@ MR öncesi: MR çekimi öncesi metal eşyalar çıkarılmalı, ortamdaki metal i
 Randevu için belgeler: İlk muayene için kimlik ve varsa sevk formu, sağlık sigortası bilgileri yeterlidir. Bazı branşlar için önce tetkik istenebilir.
 
 İlaç etkileşimi: İlaçların birlikte kullanımı prospektüs ve doktor önerisine bağlıdır. Reçetesiz ilaçlarla ilgili doktorunuza danışın.
+
+COVID-19 test süreci: PCR testi genellikle 24 saat içinde sonuç verir. Hızlı antijen testleri 15 dakikada sonuçlanabilir ancak doğruluk oranı düşüktür.
+
+Kan tahlili öncesi: Aç karnına gidilmesi istenir. En az 8 saat öncesinden su dışında bir şey tüketilmemelidir.
+
+Diyabet kontrolü: Düzenli egzersiz, sağlıklı beslenme ve ilaç uyumu diyabet yönetiminde önemlidir. HbA1c testi 3 ayda bir yaptırılmalıdır.
+
+Tansiyon ölçümü: Doğru sonuç için ölçümden önce 5 dakika dinlenilmeli, sigara ve kafein alınmamalıdır.
+
+Uyku bozukluğu: Düzenli uyku saatleri, ekran kullanımının azaltılması ve kafeinden kaçınmak uyku kalitesini artırır. Gerekirse uzman desteği alınmalıdır.

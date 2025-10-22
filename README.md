@@ -14,8 +14,7 @@ Veri içeriği şunları kapsar:
 - Tedavi yöntemleri  
 - Sağlıkla ilgili genel bilgiler  
 
-Veri, `.txt` formatında kaydedilmiş ve **embedding** işlemiyle vektörlere dönüştürülmüştür.  
-> Not: Veri seti, gereksiz yer kaplamaması için GitHub’a eklenmemiştir.
+Veri, `.txt` formatında kaydedilmiş ve **embedding** işlemiyle vektörlere dönüştürülmüştür.   
 
 ---
 
