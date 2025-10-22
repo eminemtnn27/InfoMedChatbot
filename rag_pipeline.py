@@ -2,21 +2,16 @@
 import os
 from dotenv import load_dotenv
 
-# Document loader
 from langchain_community.document_loaders import TextLoader
+ 
+from langchain_text_splitters import RecursiveCharacterTextSplitter 
 
-# Text splitter
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-
-# Embeddings & Vectorstore
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores import Chroma
-
-# QA Chain
-from langchain.chains.qa import RetrievalQA  # <-- düzeltildi
-
-# LLM base class
-from langchain.llms.base import LLM  # <-- düzeltildi
+ 
+from langchain_core.language_models.llms import LLM
+ 
+from langchain.chains.retrieval_qa.base import RetrievalQA 
 
 import google.generativeai as genai
 

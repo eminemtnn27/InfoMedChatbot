@@ -1,8 +1,14 @@
 streamlit
-langchain>=0.1.0
-langchain-embeddings
-langchain-community
+python-dotenv
+google-genai
+
+# LangChain'in Stabil Versiyonları (Çakışmayı Önlemek İçin)
+# Versiyonlar uyumlu olduğu için sorun çıkmayacaktır.
+langchain>=0.2.0
+langchain-community>=0.0.35
+langchain-core>=0.2.0
+langchain-text-splitters>=0.2.0
+
+# Vektör Veritabanı ve Embeddings (Sorunlu Paketler)
 chromadb
 sentence-transformers
-python-dotenv
-google-generativeai
