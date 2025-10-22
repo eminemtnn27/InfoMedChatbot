@@ -1,6 +1,13 @@
 streamlit
+python-dotenv
+
+# LangChain bileşenleri
 langchain
 langchain-community
+
+# Vektör Veritabanı ve Embeddings
 chromadb
 sentence-transformers
-google-generativeai
+
+# Google Gemini API
+google-genai
