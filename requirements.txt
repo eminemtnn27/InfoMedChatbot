@@ -11,3 +11,4 @@ sentence-transformers
 
 # Google Gemini API
 google-genai
+langchain-text-splitters
