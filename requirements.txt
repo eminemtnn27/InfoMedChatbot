@@ -4,6 +4,8 @@ python-dotenv
 # LangChain bileşenleri
 langchain
 langchain-community
+langchain-core          # Yeni! LLM temel sınıfı için.
+langchain-text-splitters # Yeni! Splitter için.
 
 # Vektör Veritabanı ve Embeddings
 chromadb
@@ -11,4 +13,3 @@ sentence-transformers
 
 # Google Gemini API
 google-genai
-langchain-text-splitters
