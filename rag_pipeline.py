@@ -1,22 +1,25 @@
-# chatbot.py
+# rag_pipeline.py
 import os
 from dotenv import load_dotenv
+
+# Document loader
 from langchain_community.document_loaders import TextLoader
 
-# DÜZELTME 1: Splitter'ın yeni paketini çağırıyoruz
-from langchain_text_splitters import RecursiveCharacterTextSplitter 
+# Text splitter
+from langchain.text_splitter import RecursiveCharacterTextSplitter
 
+# Embeddings & Vectorstore
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores import Chroma
 
-# DÜZELTME 2: RetrievalQA zincirini LangChain'in ana paketinden çağırıyoruz (Bu eskisi gibi kalabilir)
-from langchain.chains import RetrievalQA 
+# QA Chain
+from langchain.chains.qa import RetrievalQA  # <-- düzeltildi
 
-# DÜZELTME 3: LLM temel sınıfının yeni paketini çağırıyoruz
-from langchain_core.language_models.llms import LLM
+# LLM base class
+from langchain.llms.base import LLM  # <-- düzeltildi
 
 import google.generativeai as genai
- 
+
 # ---- .env yükle ----
 load_dotenv()
 api_key = os.getenv("GOOGLE_API_KEY")
