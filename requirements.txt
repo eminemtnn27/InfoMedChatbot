@@ -1,15 +1,13 @@
 streamlit
 python-dotenv
+google-genai
 
-# LangChain bileşenleri
+# LangChain'in ana ve yardımcı paketleri
 langchain
 langchain-community
-langchain-core          # Yeni! LLM temel sınıfı için.
-langchain-text-splitters # Yeni! Splitter için.
+langchain-core           # Yeni: LLM temel sınıfı ve çekirdek yapılar için
+langchain-text-splitters # Yeni: RecursiveCharacterTextSplitter için
 
 # Vektör Veritabanı ve Embeddings
 chromadb
 sentence-transformers
-
-# Google Gemini API
-google-genai

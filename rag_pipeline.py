@@ -2,13 +2,19 @@
 import os
 from dotenv import load_dotenv
 from langchain_community.document_loaders import TextLoader
-#from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain_text_splitters import RecursiveCharacterTextSplitter
+
+# DÜZELTME 1: Splitter'ın yeni paketini çağırıyoruz
+from langchain_text_splitters import RecursiveCharacterTextSplitter 
+
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores import Chroma
-from langchain.chains import RetrievalQA
+
+# DÜZELTME 2: RetrievalQA zincirini LangChain'in ana paketinden çağırıyoruz (Bu eskisi gibi kalabilir)
+from langchain.chains import RetrievalQA 
+
+# DÜZELTME 3: LLM temel sınıfının yeni paketini çağırıyoruz
 from langchain_core.language_models.llms import LLM
-#from langchain.llms.base import LLM
+
 import google.generativeai as genai
  
 # ---- .env yükle ----
