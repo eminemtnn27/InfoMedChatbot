@@ -7,9 +7,10 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores import Chroma
 from langchain_core.language_models.llms import LLM
-from langchain_core.prompts import PromptTemplate
+from langchain_core.prompts import PromptTemplate 
 from langchain.chains.combine_documents import create_stuff_documents_chain
-from langchain.chains import create_retrieval_chain
+from langchain.chains.retrieval import create_retrieval_chain
+
 
 # --- Ortam değişkenleri ---
 load_dotenv()
