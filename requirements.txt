@@ -1,6 +1,11 @@
 streamlit
-langchain
-langchain-community
-chromadb
+python-dotenv
+google-genai
+langchain>=0.2.1
+langchain-community>=0.0.36
+langchain-core>=0.2.1
+langchain-text-splitters>=0.2.1
+chromadb>=0.4.22
 sentence-transformers
-google-generativeai
+tiktoken
+pydantic>=2.0
