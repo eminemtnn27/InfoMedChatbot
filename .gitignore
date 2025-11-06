@@ -1,4 +1,4 @@
-# Ortam değişkenleri
+# Ortam değişkenleri ve Gizli Anahtarlar
 .env
 
 # Python cache ve sanal ortam
@@ -6,5 +6,13 @@ __pycache__/
 *.pyc
 venv/
 
-# Chroma vektör veritabanı
+# RAG Veritabanı (Zorunlu)
 vectorstore/
+
+# Veri Seti Dosyaları (Gereksinimden dolayı zorunlu)
+data/*.txt
+# veya tüm data klasörünü dışlamak isterseniz:
+# data/
+
+# Streamlit (Dağıtım ve Geliştirme Temizliği)
+.streamlit/
