@@ -52,8 +52,13 @@ def create_or_load_vectorstore(texts, persist_directory="vectorstore"):
     db.persist()
     return db
 
-# --- QA zinciri oluşturma ---
+# --- QA zinciri oluşturma --- 
 def build_qa_chain(db):
+    try:
+        from langchain.chains import RetrievalQA
+    except ModuleNotFoundError:
+        from langchain.chains.retrieval_qa.base import RetrievalQA
+
     retriever = db.as_retriever(search_kwargs={"k": 3})
     llm = GeminiLLM()
     qa = RetrievalQA.from_chain_type(

@@ -1,12 +1,11 @@
---upgrade
 google-generativeai>=0.8.3
-streamlit
-python-dotenv
+streamlit>=1.37.0
+python-dotenv>=1.0.0
 langchain>=0.2.11
 langchain-community>=0.2.10
 langchain-core>=0.2.11
 langchain-text-splitters>=0.2.2
 chromadb>=0.5.3
-sentence-transformers
+sentence-transformers>=2.2.2
 tiktoken
 pydantic>=2.0
