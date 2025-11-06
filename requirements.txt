@@ -2,17 +2,12 @@ google-generativeai>=0.8.3
 streamlit
 python-dotenv
 google-genai
-langchain>=0.2.1
-langchain-community>=0.0.36
-langchain-core>=0.2.1
-langchain-text-splitters>=0.2.1
 chromadb>=0.4.22
 sentence-transformers
 tiktoken
 pydantic>=2.0
-
-# Sabitlenmiş LangChain sürümleri (Cloud için)
-langchain==0.3.27
-langchain-core==0.3.19
-langchain-community==0.3.15
-langchain-text-splitters==0.3.2
+ 
+langchain==0.3.7
+langchain-core==0.3.15
+langchain-community==0.3.3
+langchain-text-splitters==0.3.1
