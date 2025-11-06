@@ -7,7 +7,7 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores import Chroma
 from langchain_core.language_models.llms import LLM
-from langchain.chains import RetrievalQA
+#from langchain.chains import RetrievalQA
 
 # --- Ortam değişkenleri ---
 load_dotenv()
