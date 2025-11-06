@@ -1,12 +1,11 @@
+google-generativeai>=0.8.3
 streamlit
 python-dotenv
-google-generativeai>=0.8.3
-# RAG bileşenleri
-langchain>=0.2.1
-langchain-community>=0.0.36
-langchain-core>=0.2.1
-langchain-text-splitters>=0.2.1
-chromadb>=0.4.22
+langchain>=0.2.11
+langchain-community>=0.2.10
+langchain-core>=0.2.11
+langchain-text-splitters>=0.2.2
+chromadb>=0.5.3
 sentence-transformers
 tiktoken
 pydantic>=2.0
