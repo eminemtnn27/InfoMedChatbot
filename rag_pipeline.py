@@ -7,16 +7,15 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores import Chroma
 from langchain_core.language_models.llms import LLM
-from langchain.chains import RetrievalQA
-  
+from langchain_core.prompts import PromptTemplate
+from langchain.chains.combine_documents import create_stuff_documents_chain
+from langchain.chains import create_retrieval_chain
 
 # --- Ortam değişkenleri ---
 load_dotenv()
 api_key = os.getenv("GOOGLE_API_KEY")
-
 if not api_key:
-    raise ValueError("🚨 GOOGLE_API_KEY bulunamadı! Lütfen .env dosyasına ekleyin.")
-
+    raise ValueError("🚨 GOOGLE_API_KEY bulunamadı! Lütfen .env dosyasını kontrol et.")
 genai.configure(api_key=api_key)
 
 # --- Google Gemini LLM ---
@@ -45,30 +44,32 @@ def split_documents(docs, chunk_size=600, chunk_overlap=50):
     )
     return splitter.split_documents(docs)
 
-# --- Vektör veritabanı oluşturma ---
+# --- Vektör veritabanı ---
 def create_or_load_vectorstore(texts, persist_directory="vectorstore"):
     embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
     db = Chroma.from_documents(texts, embedding=embeddings, persist_directory=persist_directory)
     db.persist()
     return db
 
-# --- QA zinciri oluşturma --- 
+# --- QA zinciri ---
 def build_qa_chain(db):
-    try:
-        from langchain.chains import RetrievalQA
-    except ModuleNotFoundError:
-        from langchain.chains.retrieval_qa.base import RetrievalQA
-
     retriever = db.as_retriever(search_kwargs={"k": 3})
     llm = GeminiLLM()
-    qa = RetrievalQA.from_chain_type(
-        llm=llm,
-        retriever=retriever,
-        return_source_documents=True
+
+    prompt = PromptTemplate.from_template(
+        "Aşağıdaki bilgileri kullanarak sağlık sorusuna açıklayıcı bir yanıt ver:\n\n{context}\n\nSoru: {input}"
     )
+
+    document_chain = create_stuff_documents_chain(llm, prompt)
+    retrieval_chain = create_retrieval_chain(retriever, document_chain)
+
+    def qa(query: str):
+        result = retrieval_chain.invoke({"input": query})
+        return {"result": result["answer"]}
+
     return qa
 
-# --- Ana pipeline ---
+# --- Pipeline hazırlama ---
 def prepare_pipeline():
     docs = load_documents()
     chunks = split_documents(docs)
@@ -78,5 +79,4 @@ def prepare_pipeline():
 
 if __name__ == "__main__":
     qa = prepare_pipeline()
-    result = qa("Aşıdan sonra ateş olması normal mi?")
-    print(result["result"])
+    print(qa("Aşıdan sonra ateş olması normal mi?")["result"])
